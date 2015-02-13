@@ -8,7 +8,7 @@ class CreateInitialTables < ActiveRecord::Migration
 
     create_table :polls do |t|
       t.integer :creator_id
-
+      t.string :name
       t.timestamps
     end
 
