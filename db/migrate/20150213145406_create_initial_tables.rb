@@ -23,7 +23,7 @@ class CreateInitialTables < ActiveRecord::Migration
     end
 
     create_table :answers do |t|
-      t.integer :taken_poll_id
+      t.integer :poll_submission_id
       t.integer :choice_id
     end
 
