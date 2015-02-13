@@ -139,3 +139,4 @@ How about multiple question types?
 [Flot]: http://www.flotcharts.org/
 [Highcharts]: http://www.highcharts.com/
 [modal dialog]: http://www.ericmmartin.com/projects/simplemodal/
+# penguin-poll
