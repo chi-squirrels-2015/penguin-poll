@@ -33,8 +33,9 @@ post "/polls" do
 end
 
 
-get "/polls/:id" do #shows all questions
-  ensure_login
+
+get "/polls/:id" do #shows one poll
+  @poll = Poll.find(params[:id])
   erb :'polls/show'
 end
 
