@@ -22,11 +22,18 @@ get "/polls/new" do
 end
 
 post "/polls" do
- #if successfully create poll
- @poll = Poll.new(params[:poll])
+  #if successfully create poll
+  user = current_user
+  puts params
+  @poll = Poll.new(creator_id: user.id, name: params[:name])
+  @question = Question.create(text: params[:question][:text][0], poll: @poll)
+  choices = params[:question][:choices]
+  choices.each do |choice|
+    Choice.create(question: @question, content: choice)
+  end
   if @poll.save
     redirect "/polls"
- #elsif not successful
+  #elsif not successful
   else
     erb :'polls/new'
   end
