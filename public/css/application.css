@@ -11,3 +11,28 @@
 input[type="radio"]{
   margin: 0 10px 0 10px;
 }
+
+.welcome {
+  text-align: center;
+  margin-top: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.login {
+  margin: 0 auto;
+  width: 600px;
+  text-align: left;
+}
+
+.signup_link {
+  margin: 0 auto;
+  width: 600px;
+  text-align: center;
+}
+
+.penguingif {
+  text-align: center;
+}
