@@ -1,1 +1,17 @@
 test 3
+<ul>
+  <li>
+    <label for="entry_title">Poll Name</label>
+    <input id="entry_title" type="text" name="entry[title]" value="<%= entry.title %>" />
+  </li>
+  <li>
+    <label for="entry_text">Poll Question</label>
+    <input id="entry_text" type="text" name="entry[text]" value="<%= entry.text %>" />
+  </li>
+  <li>
+    <input type="submit" value="Save" />
+  </li>
+  <li>
+    <input type="submit" value="Done" />
+  </li>
+</ul>
