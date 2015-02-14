@@ -1,4 +1,4 @@
-john = User.create(name: "Mark Penguin", email: "ilovepenguins@gmail.com", password_hash: "abc123")
+john = User.create(name: "Mark Penguin", email: "ilovepenguins@gmail.com", password: "abc123")
 
 retail_survey = Poll.create(name: "Retail Survey", creator: john)
 
