@@ -1,1 +1,19 @@
-test 4
+<div class="container">
+  <div class="title"><%=@poll.name %></div>
+    <% @poll.questions.each do |poll_question| %>
+
+      <h3><%=poll_question.text%></h3><br>
+      <% poll_question.choices.each do |choice| %>
+      <form action="/polls/<%= @poll.id %>" method="post">
+      <input type="radio" name="<%= poll_question.id %>" value="<%= choice.id %>"><%= choice.content%>
+      <% end %>
+
+    <% end %>
+    <br><br><br>
+    <input type="submit" value="Submit">
+    </form>
+
+</div>
+
+
+

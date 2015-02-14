@@ -13,6 +13,7 @@ end
 
 get "/polls" do
   ensure_login
+  @polls = Poll.all
   erb :'polls/index'
 end
 
@@ -36,11 +37,19 @@ end
 
 get "/polls/:id" do #shows one poll
   @poll = Poll.find(params[:id])
+  #session to get responder id
   erb :'polls/show'
 end
 
 post "/polls/:id" do
   #if all questions answered, save poll results
+  p params
+  @poll = Poll.find(params[:id])
+  @poll_submitted = PollSubmission.create(poll_id: params[:id], responder_id: session[:user_id])
+  @poll.questions.each do |poll_question|
+    Answer.create(choice_id: params[:"#{poll_question.id}"], poll_submission_id: @poll_submitted.id)   #need to find a way to store the choice made on radio button, choice_id
+  end
+
   redirect '/polls'
   #else
   erb :'polls/show'
