@@ -2,21 +2,12 @@
 
 <h3>Create a New Poll</h3>
 
-  <form id="new_poll_form" action="/polls" method="post">
+  <form id="new_poll" action="/polls" method="post">
 
-    <label for="poll_name">Poll Name</label>
-    <input id="poll_name" type="text" name="name">
+    <label name="pollname">Poll Name</label>
+    <input name="pollname" type="text">
     <p></p>
 
-    <div id="poll_question">
-      <%= erb :"Polls/_form", locals: { question: @question } %>
-    </div>
-
-    <button id="new_question" type="button">Add A New Question</button>
-
-    <input type="submit" value="Save Survey">
-
+    <input id="addquestion" type="submit" value="Add Questions">
   </form>
-
-
 </div>

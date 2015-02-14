@@ -24,31 +24,12 @@ end
 
 post "/polls" do
   #if successfully create poll
-  user = current_user
-  puts params
-  puts params[:question]
-  puts params[:questions]
-  puts params[:questions][:choices]
-
-  @poll = Poll.new(creator_id: user.id, name: params[:name])
-  questions = params[:question][:text]
-  # @question = Question.create(text: params[:question][:text][0], poll: @poll)
-  choices = params[:question][:questions][:choices]
-  questions.each_with_index do |question, index|
-    db_question = Question.create(text: question, poll: @poll)
-    for i in 0..4 do
-      Choice.create(question: db_question, content: choices[i])
-    end
-    choices.shift(5)
-  end
-  # choices.each do |choice|
-  #   Choice.create(question: @question, content: choice)
-  # end
-  if @poll.save
-    redirect "/polls"
-  #elsif not successful
+  @poll = Poll.create(creator_id: session[:user_id], name: params[:pollname])
+# @question = Question.create( poll_id: params[@poll.id])
+  if request.xhr?
+    erb :"/polls/_form", locals: {poll: @poll}, layout: false
   else
-    erb :'polls/new'
+    redirect "/" # HINT: what does this do? what should we do instead?
   end
 end
 

@@ -4,17 +4,28 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-
-  $("#new_question").on('click', function(event) {
+  $("#addquestion").on('click', function(event) {
     event.preventDefault();
-    console.log('Click was received!');
-    var question = "<label for='question-text'>Poll Question</label><input id='question-text' type='text' name='questions[text][]'>";
-    var choice = "<p></p><label for='response'>Possible Response</label><input type='text' name='questions[choices][]'>";
-    $('#poll_question').append(question);
-    $('#poll_question').append(choice);
-    $('#poll_question').append(choice);
-    $('#poll_question').append(choice);
-    $('#poll_question').append(choice);
-    $('#poll_question').append(choice);
-  });
+    var request = $.ajax({
+      url: "/polls",
+      type: "POST",
+      data: $(this).serialize()
+    });
+
+    request.done(function(response) {
+      $("#new_poll").append(response);
+      $("#addquestion").remove();
+    });
+    });
+
+  //   // console.log('Click was received!');
+  //   var question = "<label for='question-text'>Poll Question</label><input id='question-text' type='text' name='questions[text][]'>";
+  //   var choice = "<p></p><label for='response'>Possible Response</label><input type='text' name='questions[choices][]'>";
+  //   $('#poll_question').append(question);
+  //   $('#poll_question').append(choice);
+  //   $('#poll_question').append(choice);
+  //   $('#poll_question').append(choice);
+  //   $('#poll_question').append(choice);
+  //   $('#poll_question').append(choice);
+  // });
 });
