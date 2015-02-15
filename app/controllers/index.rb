@@ -1,5 +1,5 @@
 get '/' do
-  erb :index
+  redirect '/login'
 end
 
 #users profile, all taken, all get
@@ -63,7 +63,7 @@ post "/polls/:id" do
 end
 
 get '/login' do
-  erb :'users/login'
+  erb :'/users/login'
 end
 
 post '/login' do
