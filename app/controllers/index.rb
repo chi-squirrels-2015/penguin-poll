@@ -48,6 +48,7 @@ post "/questions" do
   end
 end
 
+
 post "/responses" do
   @question = Question.last
   puts "There should be something below this"
@@ -85,6 +86,11 @@ post "/polls/:id" do
   redirect '/polls'
   #else
   erb :'polls/show'
+end
+
+get '/polls/:id/results' do
+  @poll = Poll.find(params[:id])
+  erb :'/polls/results'
 end
 
 get '/login' do
