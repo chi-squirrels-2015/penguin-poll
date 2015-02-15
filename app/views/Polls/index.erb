@@ -2,6 +2,7 @@
   <% @polls = Poll.all %>
   <% @polls.each do |poll| %>
     <p><a href="/polls/<%= poll.id %>">  <%= poll.name %>  </a></p>
+    <p><a href="/polls/<%= poll.id %>/results">Results</a></p>
   <% end %>
 </div>
 
