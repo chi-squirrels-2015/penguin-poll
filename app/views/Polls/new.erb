@@ -2,41 +2,12 @@
 
 <h3>Create a New Poll</h3>
 
-  <form class="new_poll_form" action="/polls" method="post">
-    <label for="poll_name">Poll Name</label>
-    <input id="poll_name" type="text" name="name">
+  <form id="new_poll" action="/polls" method="post">
+
+    <label name="pollname">Poll Name</label>
+    <input name="pollname" type="text">
     <p></p>
-    <div class="poll_question">
-      <label for="entry_text">Poll Question</label>
-      <input id="entry_text" type="text" name="question[text][]">
-      <p></p>
-      <label for="response">Question Possible Response 1</label>
-      <input type="text" name="question[choices][]">
-      <p></p>
-      <label for="response">Question Possible Response 2</label>
-      <input type="text" name="question[choices][]">
-      <p></p>
-      <label for="response">Question Possible Response 3</label>
-      <input type="text" name="question[choices][]">
-      <p></p>
-      <label for="response">Question Possible Response 4</label>
-      <input type="text" name="question[choices][]">
-      <p></p>
-      <label for="response">Question Possible Response 5</label>
-      <input type="text" name="question[choices][]">
-      <p></p>
-    </div>
-<!-- {question: {text: "value", answers: ["", "", ""]}}
-  name=question[answers][]
-  name=question[answers][]
-  name=question[answers][]
-  name=question[answers][]
-  name=question[answers][]
-  answer2
-  answer3 -->
 
-    <input type="submit" value="Save Survey">
-
-</form>
-
+    <input id="addquestion" type="submit" value="Add Questions">
+  </form>
 </div>
