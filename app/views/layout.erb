@@ -21,8 +21,6 @@
   <% if current_user %>
     Hello, <%= current_user.name %>
     <a href="http://localhost:9393/logout">Log Out</a>
-  <% else %>
-    <a href="http://localhost:9393/login">Log In</a>
     <%end %>
   <%= yield %>
 </body>
