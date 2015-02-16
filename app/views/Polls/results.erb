@@ -1,24 +1,24 @@
+<div clas="container">
 <div class="results">
-  <div class="title"><%=@poll.name %></div>
-    <% @poll.questions.each do |poll_question| %>
-    <!-- iterate through each question in the poll -->
-    <p> <%= poll_question.text %> </p>
-    <% poll_question.choices.each do |poll_choices| %>
-    <!-- show each questions choices -->
-    <p> <%= poll_choices.content %> </p>
-    <p> <%= poll_choices.answers.length %> out of <%= poll_question.answers.length.to_i %> </p>
+  <div class="title"><%=@poll.name %>
+  </div>
+  <% @poll.questions.each do |poll_question| %>
+  <!-- iterate through each question in the poll -->
+  <p> <strong> <%= poll_question.text %> </strong> </p>
+  <% poll_question.choices.each do |poll_choices| %>
+    <!-- show each question's choices -->
+    <p> <%= poll_choices.content %>
+      <!-- for each choice a progress bar is displayed -->
+    <progress value="<%= poll_choices.answers.length %>" max="<%= poll_question.answers.length %>">
+    </progress>
+    <!-- calculate percentage of people that answered with this choice -->
+    <% percent = 0 if poll_choices.answers.length == 0 %>
+    <% percent = ((poll_choices.answers.length.to_f / poll_question.answers.length.to_f) * 100).to_i  if poll_choices.answers.length != 0 %>
+    <!-- display percentage of answers with this choice out of total answers -->
+    <%= percent %> % of <%= poll_question.answers.length %> total answers.
+    </p>
+    <% end %>
 
-      <% end %>
-      <% end %>
-
-
-
-
-
-
-
-
-
-
-
+  <% end %>
+</div>
 </div>
