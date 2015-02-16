@@ -1,27 +1,23 @@
-<div class="welcome"> Welcome to Poll Penguin! </div>
+<div class="landing">
 
-
-<h1>Log In</h1>
-<form action="/login" method="post">
-  <div class="login">
-    <div>
-    <label for="email">Email:</label>
-    <input type="text" name="user[email]">
+<form class="login_container" action="/login" method="post">
+  <div class="login_header">
+    <span id="login"><h3>Log In</h3></span>
   </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" name="user[password]">
+  <div class="login_form">
+    <input id="email" type="text" name="user[email]" placeholder="Email">
+    <br>
+    <br>
+    <input id="password" type="password" name="user[password]" placeholder="Password">
+    <br>
+    <br>
+    <br>
+    <input class="login_button" type="submit" value="Sign In">
+      <div class="signup_link">
+      <a href="http://localhost:9393/signup">Create Account </a>
+      </div>
   </div>
-    <input type="submit" value="Log In">
-  <div>
-</div>
-  <div class="signup_link">
-  <a href="http://localhost:9393/signup">Create Account </a>
-  </div>
+</form>
 </div>
 
 
-<div class="penguingif">
-  <iframe src="//giphy.com/embed/nnvkz5mkJQsIU?html5=true" width="480" height="360" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-  </iframe>
-</div>

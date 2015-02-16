@@ -1,20 +1,19 @@
 get '/' do
-  redirect '/login'
+
+  erb :index
 end
 
 #users profile, all taken, all get
 get "/users/:id" do
-
-  p params[:id]
   @user = User.find(params[:id])
-  p @user
+
   erb :'/users/profile'
 end
 
 get "/polls" do
   ensure_login
   @polls = Poll.all
-  erb :'polls/index'
+  erb :'polls/index' 
 end
 
 get "/polls/new" do
