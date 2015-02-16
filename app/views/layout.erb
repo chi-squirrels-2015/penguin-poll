@@ -27,6 +27,9 @@
       <ul>
         <% if current_user %>
         <li> Hello, <%= current_user.name %></li>
+        <li><a href="http://localhost:9393/users/<%= current_user.id%>">My Profile</li></a>
+        <li><a href="http://localhost:9393/polls">Availble Polls</a></li>
+        <li>Create a Poll</li>
         <li><a href="http://localhost:9393/logout"> <input class="login_button" type="submit" value="Log Out"></a></li>
         <% else %>
         <li><a href="http://localhost:9393/login"> <input class="login_button" type="submit" value="Sign In"></a></li>

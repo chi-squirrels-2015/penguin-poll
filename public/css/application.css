@@ -8,6 +8,10 @@ body {
   padding: 0;
 }
 
+.background {
+    background-color: #333333;
+}
+
 #wrapper {
   border: 1px dotted gray;
   background-color: #333333;
@@ -32,12 +36,21 @@ body {
   }
 
 #header li {
-  border: 1px solid black;
   display: inline-block;
   margin: 1em .5em;
   text-align: left;
   text-decoration: none;
   }
+
+#header li a {
+  text-decoration: none;
+  color: white;
+}
+
+#header a:hover {
+  background-color: #005f5f;
+
+}
 
 .landing {
   background-image: url("../images/penguinbanner.jpg");
@@ -152,7 +165,29 @@ input#password {
   color: black;
   }
 
+input#user {
+  background-image: url("../images/usericon.png");
+  background-repeat: no-repeat;
+  background-position: 6px;
+  border: 1px solid #DADADA;
+  margin-top: 10px;
+  padding-left: 30px;
+  width: 200px;
+  height: 30px;
+  font-size: 14px;
+  color: black;
+  }
+
 .login_button {
+  height: 30px;
+  width: 100px;
+  color: white;
+  border-radius: 4px;
+  background-color: rgb(111, 146, 184);
+}
+
+.signup_button {
+  margin-left: 60px; 
   height: 30px;
   width: 100px;
   color: white;
