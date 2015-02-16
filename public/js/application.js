@@ -41,6 +41,11 @@ $(document).ready(function() {
       method: "post",
       data: $(this).parents("form").serialize()
     });
+      // $(this).parents("form").append("<input id="addresponses" name="bite[]" type="submit" value="Add Responses">");|
+
+
+          $(this).parents("form").children("div").append("<p><label name='response'>Response</label><input type='text' name='answer[]'></p>");
+
 
     request.done(function(response) {
       console.log("INSIDE done");
