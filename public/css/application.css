@@ -3,6 +3,84 @@
   max-width: 1000px;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  border: 1px dotted gray;
+  background-color: #333333;
+  color: white;
+  }
+
+#header {
+  overflow: hidden;
+  }
+
+#header h1 {
+  float: left;
+  margin-left: 7%;
+  margin-top: 35px;
+
+  }
+
+#header ul {
+  padding: 0;
+  text-align: right;
+  margin-right: 7%;
+  }
+
+#header li {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 1em .5em;
+  text-align: left;
+  text-decoration: none;
+  }
+
+.landing {
+  background-image: url("../images/penguinbanner.jpg");
+  height: 500px;
+}
+
+.banner {
+  width: 100%;
+}
+
+.landing_header {
+  position: absolute;
+  width: 700px
+}
+
+
+.landing_title {
+  position: relative;
+  left: 100px;
+  top: 75px;
+  margin-top: 70px;
+  font-size: 400%;
+  margin-top: 0;
+  font-family: 'Lato', sans-serif;
+  margin-left: 13.75%;
+}
+
+.landing_subtitle {
+  position: relative;
+  left: 300px;
+  top: 100px;
+  font-family: 'Shadows Into Light', cursive;
+    margin-left: 13.75%;
+    font-size: 175%;
+
+}
+
+#login {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
 .title {
   text-align: center;
   font-size: 30px;
@@ -21,18 +99,72 @@ h1 {
   text-align: center;
 }
 
-.login {
+.login_container {
+  position: relative;
+  top: 100px;
   margin: 0 auto;
-  width: 600px;
+  width: 300px;
+  height: 275px;
+  border: 1px solid #DADADA;
+  background-color: #f6f6f6;
+
+}
+
+.login_header {
+  height: 50px;
+  color: white;
+  background-color: rgb(111, 146, 184);
   text-align: left;
+  vertical-align: center;
+}
+
+.login_form {
+  margin: 0 auto;
+  padding-left: 30px; 
+  padding-top: 20px;
+
+}
+
+input#email {
+  background-image: url("../images/mailicon.png");
+  background-repeat: no-repeat;
+  background-position: 6px;
+
+  border: 1px solid #DADADA;
+  margin-top: 10px;
+  padding-left: 30px;
+  width: 200px;
+  height: 30px;
+  font-size: 14px;
+  color: black;
+}
+
+input#password {
+  background-image: url("../images/passicon.png");
+  background-repeat: no-repeat;
+  background-position: 6px;
+  border: 1px solid #DADADA;
+  margin-top: 10px;
+  padding-left: 30px;
+  width: 200px;
+  height: 30px;
+  font-size: 14px;
+  color: black;
+  }
+
+.login_button {
+  height: 30px;
+  width: 100px;
+  color: white;
+  border-radius: 4px;
+  background-color: rgb(111, 146, 184);
 }
 
 .signup_link {
-  margin: 0 auto;
-  width: 600px;
-  text-align: center;
+  display: inline;
+  float: right;
+  padding-right: 40px;
+  padding-top: 8px; 
+  font-size: 75%;
 }
 
-.penguingif {
-  text-align: center;
-}
