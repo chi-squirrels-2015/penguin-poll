@@ -103,6 +103,7 @@ input[type="radio"]{
   margin: 0 10px 0 10px;
 }
 
+
 .welcome {
   text-align: center;
   margin-top: 15px;
@@ -110,6 +111,10 @@ input[type="radio"]{
 
 h1 {
   text-align: center;
+}
+
+#last_choice {
+  
 }
 
 .login_container {

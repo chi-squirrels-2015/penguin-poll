@@ -1,0 +1,31 @@
+<p>Poll Dashboard</p>
+Total Questions: <span id="question_count"></span>
+
+<form id="new_question">
+
+	<label name="question">Question</label>
+	<input name="question" type="text">
+	<p></p>
+	<div class="choice_form" data-form-id=<%= @poll.id %>>
+			<label name="response">Choice</label>
+			<input name="response[]" type="text">
+			<br>
+			<br>
+			<label name="response">Choice</label>
+			<input name="response[]" type="text">
+		<br>
+		<br>
+			<label name="response">Choice</label>
+			<input name="response[]" type="text">
+		<br>
+		<br>
+			<label name="response">Choice</label>
+			<input name="response[]" type="text">
+		<br>
+		<br>
+	</div>
+		<button type="button" id="addanotherresponse">Add Response</button>
+		<input type="submit" id="nextquestion" value="Next Question">
+		<input type="submit" id="complete_new_poll" value="Finish Poll">
+
+	</form>

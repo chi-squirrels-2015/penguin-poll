@@ -13,57 +13,41 @@ end
 get "/polls" do
   ensure_login
   @polls = Poll.all
+
   erb :'polls/index' 
 end
 
 get "/polls/new" do
   ensure_login
+
   erb :'polls/new'
 end
 
 post "/polls" do
-  #if successfully create poll
-  p params
   @poll = Poll.create(creator_id: session[:user_id], name: params[:pollname])
-  @poll.save
-# @question = Question.create( poll_id: params[@poll.id])
-  if request.xhr?
-    erb :"/polls/_form", locals: {poll: @poll}, layout: false
-  else
-    redirect "/" # HINT: what does this do? what should we do instead?
-  end
+
+  redirect "/polls/#{@poll.id}/questions/new"
 end
 
-post "/questions" do
-  @poll = Poll.last
-  p params
+
+
+get "/polls/:id/questions/new" do
+  @poll = Poll.find(params[:id])
+  @question_count = @poll.questions.count
+
+  erb :'questions/new'
+end
+
+post "/polls/:id/questions" do
+  @poll = Poll.find(params[:id])
   @question = Question.create(text: params[:question], poll_id: @poll.id)
-  p @poll
-  p @question
-  if request.xhr?
-    erb :"polls/response", locals: {question: @question}, layout: false
-  else
-    redirect "/" # HINT: what does this do? what should we do instead?
+  @question_count = @poll.questions.count
+  params[:response].each do |response|
+    Choice.create(question_id: @question.id, content: response)
   end
-end
 
-
-post "/responses" do
-  @question = Question.last
-  puts "There should be something below this"
-  puts @question.id
-  puts "there should be something above this"
-  # Change the word "response" in @response to another name. It seems like ruby and/or ajax is getting confused. It should work.
-  Choice.create(content: params[:response], question_id: @question.id)
-  if request.xhr?
-    puts "in XHR"
-    puts params
-    puts @question
-    # puts @response
-    erb :"polls/response", layout: false
-  else
-    redirect "/" # HINT: what does this do? what should we do instead?
-  end
+  content_type :json
+  return { :questioncount => @question_count}.to_json
 end
 
 
